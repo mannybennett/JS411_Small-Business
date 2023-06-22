@@ -11,3 +11,8 @@ export const removeListing = (index) => {
     value: index
   }
 }
+
+export const setLoginStatus = (status) => ({
+  type: "SET_LOGIN_STATUS",
+  value: status
+});

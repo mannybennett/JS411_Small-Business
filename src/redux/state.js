@@ -3,6 +3,9 @@ export default {
         username: 'test-user-1',
         email: 'test-user@example.com'
     },
+    login: {
+      status: null
+    },
     listings: [
         {
            "name": "The Home Depot",
@@ -30,4 +33,3 @@ export default {
         }
     ]
   };
-  

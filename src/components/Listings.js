@@ -7,10 +7,8 @@ import {
     TableHead,
     TableRow
 } from '@mui/material'
-import DeleteIcon from '@mui/icons-material/Delete'
  
-const Dashboard = (props) => {
-    console.log(props.login)
+const Listings = (props) => {
     return (
         <Container maxWidth="lg" className="car-container">
             <Table>
@@ -20,7 +18,6 @@ const Dashboard = (props) => {
                         <TableCell>Description</TableCell>
                         <TableCell>Hours</TableCell>
                         <TableCell>Address</TableCell>
-                        <TableCell>Delete</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -30,12 +27,6 @@ const Dashboard = (props) => {
                         <TableCell>{listing["description"]}</TableCell>
                         <TableCell>{listing["hours"]}</TableCell>
                         <TableCell>{listing["address"]}</TableCell>
-                        <TableCell>
-                            <DeleteIcon
-                                // add onClick method here
-                                onClick={() => props.removeListing(idx)}
-                                className="icon text-red" />
-                        </TableCell>
                     </TableRow>
                 ))}
                 </TableBody>
@@ -44,4 +35,4 @@ const Dashboard = (props) => {
     )
 }
 
-export default Dashboard
+export default Listings

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import cookie from 'cookie';
 import { TextField, Button, Container } from "@mui/material";
 
-const Login = () => {
+const Login = (props) => {
   const navigate = useNavigate();
 
   const [state, setState] = useState({
@@ -23,9 +23,8 @@ const Login = () => {
 
   const login = (e) => {
     e.preventDefault();
-    // set cookie here
-    // set loggedIn = true and max-age = 60*1000 (one minute)
     document.cookie = cookie.serialize('loggedIn', 'true', { maxAge:60 });
+    props.setLoginStatus(true);
     navigate("/dashboard");
   };
 

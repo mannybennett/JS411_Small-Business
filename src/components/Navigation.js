@@ -4,7 +4,8 @@ import { AppBar, Toolbar,
 } from '@mui/material'
 import { Link } from 'react-router-dom'
 
-const Navigation = () => {
+const Navigation = ({ login }) => {
+    console.log(login)
     return (
         <AppBar sx={{ backgroundColor: '#3CB270' }} position="relative">
             <Toolbar>
@@ -13,10 +14,18 @@ const Navigation = () => {
                 </Typography>
                 <ul className="nav-list">
                     <li className="nav-list-item">
-                        <Link to="/dashboard">Listings</Link>
+                        <Link to="/listings">Listings</Link>
                     </li>
                     <li className="nav-list-item">
-                        <Link to="/login">{document.cookie ? 'Logout' : 'Login'}</Link>
+                        <Link to="/addlisting">Add</Link>
+                    </li>
+                    {/* {login &&
+                    <li className="nav-list-item">
+                        <Link to="/addlisting">Add</Link>
+                    </li>
+                    } */}
+                    <li className="nav-list-item">
+                        <Link to="/login">Login</Link>
                     </li>
                 </ul>
             </Toolbar>

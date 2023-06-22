@@ -5,11 +5,11 @@ import { removeListing } from '../redux/actions';
 const mapStateToProps = (state) => {
     return {
         user: state.user,
+        login: state.login,
         listings: state.listings
     }
 };
 
-// add mapDispatchToProps function here
 const mapDispatchToProps = (dispatch) => {
     return {
         removeListing:(index) => dispatch(removeListing(index))

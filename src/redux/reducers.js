@@ -1,8 +1,17 @@
+
 import { combineReducers } from 'redux';
 
 const user = (state = null) => state;
 
-// add switch statements in here
+const login = (state = null, action) => {
+    switch (action.type) {
+      case 'SET_LOGIN_STATUS':
+        return action.value;
+      default:
+        return state;
+    }
+};
+
 const listings = (state = [], action) => {
     switch (action.type) {
         case "ADD_LISTING":
@@ -15,4 +24,4 @@ const listings = (state = [], action) => {
     }
 };
 
-export default combineReducers({ user, listings })
+export default combineReducers({ user, login, listings })
