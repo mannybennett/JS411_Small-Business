@@ -8,9 +8,9 @@ import {
     TableRow
 } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete'
+import { Link } from 'react-router-dom'
  
 const Dashboard = (props) => {
-    console.log(props.login)
     return (
         <Container maxWidth="lg" className="car-container">
             <Table>
@@ -26,13 +26,14 @@ const Dashboard = (props) => {
                 <TableBody>
                 {props.listings.map((listing, idx) => (
                     <TableRow key={idx}>
-                        <TableCell>{listing["name"]}</TableCell>
+                        <TableCell>
+                            <Link to={`/details/${listing.id}`}>{listing["name"]}</Link>
+                        </TableCell>
                         <TableCell>{listing["description"]}</TableCell>
                         <TableCell>{listing["hours"]}</TableCell>
                         <TableCell>{listing["address"]}</TableCell>
                         <TableCell>
                             <DeleteIcon
-                                // add onClick method here
                                 onClick={() => props.removeListing(idx)}
                                 className="icon text-red" />
                         </TableCell>

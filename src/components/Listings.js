@@ -7,6 +7,7 @@ import {
     TableHead,
     TableRow
 } from '@mui/material'
+import { Link } from 'react-router-dom'
  
 const Listings = (props) => {
     return (
@@ -23,7 +24,9 @@ const Listings = (props) => {
                 <TableBody>
                 {props.listings.map((listing, idx) => (
                     <TableRow key={idx}>
-                        <TableCell>{listing["name"]}</TableCell>
+                        <TableCell>
+                            <Link to={`/details/${listing.id}`}>{listing["name"]}</Link>
+                        </TableCell>
                         <TableCell>{listing["description"]}</TableCell>
                         <TableCell>{listing["hours"]}</TableCell>
                         <TableCell>{listing["address"]}</TableCell>

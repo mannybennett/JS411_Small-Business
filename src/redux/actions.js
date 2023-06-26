@@ -12,7 +12,9 @@ export const removeListing = (index) => {
   }
 }
 
-export const setLoginStatus = (status) => ({
-  type: "SET_LOGIN_STATUS",
-  value: status
-});
+export const updateUser = (user) => {
+  return {
+    type: "UPDATE_USER",
+    value: user
+  }
+} 

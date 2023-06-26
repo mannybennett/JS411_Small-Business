@@ -5,8 +5,9 @@ import Listings from './containers/Listings'
 import Dashboard from './containers/Dashboard'
 import Login from './containers/Login'
 import AddListing from './containers/AddListing'
+import Details from './containers/Details'
 
-const checkAuth = () => {
+export const checkAuth = () => {
     const cookies = cookie.parse(document.cookie);
     return cookies['loggedIn'] ? true : false;
 }
@@ -21,6 +22,7 @@ const Router = () => {
         <Routes>
             <Route path="/login" element={<Login/>} />
             <Route path="/listings" element={<Listings/>} />
+            <Route path="/details/:id" element={<Details/>} />
             <Route path="/dashboard" element={<ProtectedRoute component={ Dashboard }/>} />
             <Route path="/addlisting" element={<ProtectedRoute component={ AddListing }/>} />
         </Routes>

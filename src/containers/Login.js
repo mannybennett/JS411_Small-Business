@@ -1,9 +1,13 @@
 import { connect } from 'react-redux';
 import Login from '../components/Login';
-import { setLoginStatus } from '../redux/actions';
+import { updateUser } from '../redux/actions';
+
+const mapStateToProps = (state) => ({
+  user: state.user
+})
 
 const mapDispatchToProps = (dispatch) => ({
-  setLoginStatus: (status) => dispatch(setLoginStatus(status)),
+  updateUser: (username) => dispatch(updateUser(username)),
 });
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

@@ -21,8 +21,9 @@ class AddListing extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const payload = { ...this.state }
+        console.log(this.props)
+        // payload.id = this.props.listings.length + 1
         this.props.addListing(payload)
-        this.setState({ open: false })
     }
 
     componentDidUpdate = (prevProps, prevState) => {
