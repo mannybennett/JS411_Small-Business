@@ -27,7 +27,7 @@ const Dashboard = (props) => {
                 {props.listings.map((listing, idx) => (
                     <TableRow key={idx}>
                         <TableCell>
-                            <Link to={`/details/${listing.id}`}>{listing["name"]}</Link>
+                            <Link className="text-underlined" to={`/details/${listing.id}`}>{listing["name"]}</Link>
                         </TableCell>
                         <TableCell>{listing["description"]}</TableCell>
                         <TableCell>{listing["hours"]}</TableCell>

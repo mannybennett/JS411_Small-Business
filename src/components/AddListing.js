@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import {
-    Button,
-    TextField
-} from '@mui/material'
+import { Button, TextField } from '@mui/material'
 
 class AddListing extends Component {
     state = {
@@ -21,13 +18,13 @@ class AddListing extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const payload = { ...this.state }
-        console.log(this.props)
-        // payload.id = this.props.listings.length + 1
+        payload.id = this.props.listings.length + 1
         this.props.addListing(payload)
     }
 
     componentDidUpdate = (prevProps, prevState) => {
-        if (prevState.open !== this.state.open) {
+        if (prevProps.listings.length !== this.props.listings.length) {
+            console.log(this.props.listings)
             this.setState({
                 name: '',
                 description: '',
@@ -40,7 +37,7 @@ class AddListing extends Component {
     render() {
         return (
                 <div className='add-container'>
-                    <form 
+                    <form
                         onSubmit={this.handleSubmit}
                         className="add-form">
                         <TextField 

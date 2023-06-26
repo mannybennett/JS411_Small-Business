@@ -11,16 +11,19 @@
 }
 
 .add-container {
+  max-width: 1200px;
+  margin: 50px 50px 0 50px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 img {
-  width: 650px;
-  height: 400px;
+  width: 600px;
+  height: 350px;
 }
 
 .add-form {
+  min-width: 500px;
   display: flex;
   flex-direction: column;
   gap: 15px
@@ -35,6 +38,10 @@ img {
 .card {
   width: 20vw;
   margin: 25px;
+}
+
+.text-underlined {
+  text-decoration: underline;
 }
 
 a {
