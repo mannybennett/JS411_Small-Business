@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, TextField } from '@mui/material'
+import maps from '../images/maps.jpg'
 
 class AddListing extends Component {
     state = {
@@ -24,7 +25,6 @@ class AddListing extends Component {
 
     componentDidUpdate = (prevProps, prevState) => {
         if (prevProps.listings.length !== this.props.listings.length) {
-            console.log(this.props.listings)
             this.setState({
                 name: '',
                 description: '',
@@ -71,7 +71,7 @@ class AddListing extends Component {
                         <br />
                         <Button sx={{ backgroundColor: "#3F51B5", maxWidth: '50%' }} variant="contained" type="submit">Save</Button>
                     </form>
-                    <img alt='pic' src='../maps.jpg'></img>
+                    <img alt='pic' src={maps}></img>
                 </div>
         )
     }

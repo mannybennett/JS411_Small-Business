@@ -17,13 +17,13 @@ const ProtectedRoute = (props) => {
     return checkAuth() ? <Component {...rest}/> : <Navigate to='/login'/>
 };
 
-const Router = () => {
+const Router = (props) => {
     return (
         <Routes>
-            <Route path="/login" element={<Login/>} />
+            <Route path="/login" element={<Login setLoggin={props.makeLoggedIn}/>} />
             <Route path="/listings" element={<Listings/>} />
             <Route path="/details/:id" element={<Details/>} />
-            <Route path="/dashboard" element={<ProtectedRoute component={ Dashboard }/>} />
+            <Route path="/dashboard" element={<ProtectedRoute isLoggedIn={checkAuth()} component={ Dashboard }/>} />
             <Route path="/addlisting" element={<ProtectedRoute component={ AddListing }/>} />
         </Routes>
     );

@@ -1,12 +1,10 @@
-import React from 'react'
-import { AppBar, Toolbar,
-  Typography
-} from '@mui/material'
+import React, { useState } from 'react'
+import { AppBar, Toolbar, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
-import { checkAuth } from '../Router';
 
 const Navigation = (props) => {
-    console.log(checkAuth())
+    // const [loggedIn, setLoggedIn] = useState(localStorage.getItem("isLoggedIn"))
+    console.log(props)
     return (
         <div>
             <AppBar sx={{ backgroundColor: '#3CB270' }} position="relative">
@@ -16,16 +14,16 @@ const Navigation = (props) => {
                     </Typography>
                     <ul className="nav-list">
                         <li className="nav-list-item">
-                            {checkAuth() ? <Link to="/dashboard">Listings</Link> : <Link to="/listings">Listings</Link>}
+                            {props.isLoggedIn ? <Link to="/dashboard">Listings</Link> : <Link to="/listings">Listings</Link>}
                         </li>
-                        {checkAuth() &&
+                        {props.isLoggedIn &&
                         <li className="nav-list-item">
                             <Link to="/addlisting">Add</Link>
                         </li>
                         }
-                        {checkAuth() ? 
+                        {props.isLoggedIn ? 
                         <li className="nav-list-item">
-                            <Link to="/login">Logout</Link>
+                            <Link onClick={() => props.makeLoggedIn(false)} to="/login">Logout</Link>
                         </li> : 
                         <li className="nav-list-item">
                             <Link to="/login">Login</Link>
@@ -35,7 +33,7 @@ const Navigation = (props) => {
                 </Toolbar>
             </AppBar>
             <div>
-                {checkAuth() && <AppBar sx={{ backgroundColor: 'grey' }} position="relative">{props.user}</AppBar>}
+                {props.updateUser && <AppBar sx={{ backgroundColor: 'grey' }} position="relative">{props.updateUser.username}</AppBar>}
             </div>
         </div>
     )
