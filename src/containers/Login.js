@@ -3,7 +3,6 @@ import Login from '../components/Login';
 import { updateUser } from '../redux/actions';
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     user: state.user
   }

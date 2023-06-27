@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { AppBar, Toolbar, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
 
 const Navigation = (props) => {
     // const [loggedIn, setLoggedIn] = useState(localStorage.getItem("isLoggedIn"))
-    console.log(props)
     return (
         <div>
             <AppBar sx={{ backgroundColor: '#3CB270' }} position="relative">

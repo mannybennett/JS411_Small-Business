@@ -8,12 +8,12 @@ const Details = (props) => {
   const listing = props.listings.find((l) => l.id === Number(id));
 
     return (
-        <Container sx={{ textAlign: 'center' }} maxWidth="md">
-            <div>
+        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} maxWidth="md">
+            <div className='details'>
                 <h2>{listing.name}</h2>
-                <h4>{listing.description}</h4>
-                <h4>{listing.hours}</h4>
                 <h4>{listing.address}</h4>
+                <h4>{listing.hours}</h4>
+                <p>{listing.description}</p>
             </div>
             <img alt='pic' src={maps}></img>
         </Container>

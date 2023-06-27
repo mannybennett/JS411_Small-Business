@@ -5,7 +5,6 @@ import { TextField, Button, Container } from "@mui/material";
 
 const Login = (props) => {
   const navigate = useNavigate();
-  console.log(props)
   const [state, setState] = useState({
     username: "",
     password: "",
@@ -23,11 +22,9 @@ const Login = (props) => {
 
   const login = (e) => {
     e.preventDefault();
-    console.log(state.username)
     document.cookie = cookie.serialize('loggedIn', 'true', { maxAge:180 });
     props.setLoggin(true)
     props.updateUser(state.username)
-    console.log(props)
     localStorage.setItem("isLoggedIn", true)
     navigate("/dashboard");
   };

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, TextField } from '@mui/material'
+import { Button, TextField, Container } from '@mui/material'
 import maps from '../images/maps.jpg'
 
 class AddListing extends Component {
@@ -36,6 +36,7 @@ class AddListing extends Component {
 
     render() {
         return (
+            <Container>
                 <div className='add-container'>
                     <form
                         onSubmit={this.handleSubmit}
@@ -73,6 +74,7 @@ class AddListing extends Component {
                     </form>
                     <img alt='pic' src={maps}></img>
                 </div>
+            </Container>
         )
     }
 }
