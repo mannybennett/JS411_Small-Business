@@ -9,7 +9,7 @@ const Navigation = (props) => {
             <AppBar sx={{ backgroundColor: '#3CB270' }} position="relative">
                 <Toolbar>
                     <Typography variant="h6" style={{ flexGrow: "1" }}>
-                        Austin Small Business
+                        Small Business App
                     </Typography>
                     <ul className="nav-list">
                         <li className="nav-list-item">

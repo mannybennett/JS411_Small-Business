@@ -20,6 +20,7 @@ const ProtectedRoute = (props) => {
 const Router = (props) => {
     return (
         <Routes>
+            <Route path="/" element={<Navigate to="/login" />} />
             <Route path="/login" element={<Login setLoggin={props.makeLoggedIn}/>} />
             <Route path="/listings" element={<Listings/>} />
             <Route path="/details/:id" element={<Details/>} />
